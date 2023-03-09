@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  display: flex;
+
+  width: 100%;
+  min-height: 100vh;
+  background-color: blanchedalmond;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: rgb(119, 204, 183);
+    min-height: 100vh;
+    margin-right: 10%;
+    padding-top: 20%;
+}
+
+.sidebar > ol {
+    padding-left: 45px;
+}
+
+.sidebar > p {
+    text-align: center;
+}
+
+.mini-sidebar {
+    display: none;
+    bottom: 10%;
+    left: 10%;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgb(133, 206, 196);
+    position: fixed;
+}
+
+.mini-sidebar:hover {
+    background-color: rgb(89, 141, 134);
+}
+
+.wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.grid-item {
+    background: #dfd5cf;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.grid-container {
+    margin-top: 45px;
+    display: grid;
+    grid-template-columns: repeat(4, 260px);
+    grid-template-rows: repeat(4, 180px);
+    grid-auto-rows: minmax(300px, 380px);
+    gap: 20px;
+    
+    grid-template-areas:
+    "item-1 item-1 item-3 item-4"
+    "item-2 item-2 item-3 item-4"
+    "item-5 item-6 item-7 item-7"
+    "item-5 item-6 item-8 item-8";
+}
+
+.item-1 {
+    grid-area: item-1;
+}
+.item-2 {
+    grid-area: item-2;
+}
+.item-3 {
+    grid-area: item-3;
+}
+.item-4 {
+    grid-area: item-4;
+}
+
+.item-5 {
+    grid-area: item-5;
+}
+.item-6 {
+    grid-area: item-6;
+}
+.item-7 {
+    grid-area: item-7;
+}
+.item-8 {
+    grid-area: item-8;
+}
+
+
+
+@media screen and (max-width: 1420px) {
+    .sidebar-container {
+        display: none;
+    }
+
+    .mini-sidebar {
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .grid-container {
+        grid-template-columns: repeat(2, minmax(250px, 280px));
+        grid-template-rows: repeat(8, minmax(160px, 180px));
+        
+        grid-template-areas:
+      "item-1 item-1"
+      "item-2 item-2"
+      "item-3 item-4"
+      "item-3 item-4"
+      "item-5 item-5"
+      "item-6 item-6"
+      "item-7 item-8"
+      "item-7 item-8";
+  }
+}
+
+@media screen and (max-width: 620px){
+    .grid-container {
+        grid-template-columns: minmax(250px, 280px);
+        grid-template-rows: repeat(16, minmax(300px, 380px));
+        grid-template-areas:
+        "item-1"
+        "item-2"
+        "item-3"
+        "item-4"
+        "item-5"
+        "item-6"
+        "item-7"
+        "item-8"
+      }
+}
+
